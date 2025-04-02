@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://cscsaywc2qlkk"]
+
+[ext_resource type="Shader" uid="uid://4uk3iwjpoolw" path="res://shaders/bg.gdshader" id="1_71q2s"]
+[ext_resource type="Texture2D" uid="uid://ciumnb85v66mc" path="res://assets/home_bg.png" id="2_w18ys"]
+[ext_resource type="PackedScene" uid="uid://isickk7036q" path="res://scenes/task.tscn" id="3_w18ys"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_reixx"]
+shader = ExtResource("1_71q2s")
+shader_parameter/size = 15.0
+shader_parameter/speed = 0.1
+shader_parameter/direction_x = 1.0
+shader_parameter/direction_y = 1.0
+shader_parameter/movement_texture = ExtResource("2_w18ys")
+shader_parameter/opacity = 0.4
+shader_parameter/is_paused = false
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.114897, 0.114897, 0.114897, 1)
+
+[node name="BGPattern" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_reixx")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_w18ys")
+stretch_mode = 1
+
+[node name="Task" parent="." instance=ExtResource("3_w18ys")]
+layout_mode = 1
