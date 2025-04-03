@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://clpd4aclajqmd"]
+[gd_scene load_steps=15 format=3 uid="uid://clpd4aclajqmd"]
 
 [ext_resource type="Script" uid="uid://cbv3p47bngfgp" path="res://scripts/tracker.gd" id="1_2oy2a"]
 [ext_resource type="FontFile" uid="uid://q0n4smkjtegn" path="res://assets/fonts/Coolvetica Rg.otf" id="1_bfym8"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://ciumnb85v66mc" path="res://assets/home_bg.png" id="2_2o4v1"]
 [ext_resource type="Shader" uid="uid://4uk3iwjpoolw" path="res://shaders/bg.gdshader" id="2_rep8v"]
 [ext_resource type="Texture2D" uid="uid://ribmmpthspxj" path="res://assets/tracker/dots-three-vertical-bold.svg" id="3_dcoxp"]
-[ext_resource type="PackedScene" uid="uid://isickk7036q" path="res://scenes/task.tscn" id="4_dcoxp"]
 [ext_resource type="Texture2D" uid="uid://col7mg5ly0af8" path="res://assets/tracker/plus.svg" id="5_2oy2a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i26kx"]
@@ -125,13 +124,11 @@ custom_minimum_size = Vector2(0, 1300)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2o4v1")
 horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Tasks"]
 layout_mode = 2
 theme_override_constants/separation = 280
-
-[node name="Task" parent="ScrollContainer/VBoxContainer/Tasks/VBoxContainer" instance=ExtResource("4_dcoxp")]
-layout_mode = 2
 
 [node name="Completed" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -147,6 +144,8 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/FinishedTasks"]
 layout_mode = 2
