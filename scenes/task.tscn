@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://isickk7036q"]
+[gd_scene load_steps=13 format=3 uid="uid://isickk7036q"]
 
 [ext_resource type="FontFile" uid="uid://q0n4smkjtegn" path="res://assets/fonts/Coolvetica Rg.otf" id="1_3qeyo"]
 [ext_resource type="Texture2D" uid="uid://cl16bdi12xjkc" path="res://assets/check-square.svg" id="1_5u8vp"]
@@ -13,6 +13,12 @@ corner_radius_bottom_right = 64
 corner_radius_bottom_left = 64
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qe5cv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mpid7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nrbgo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yx810"]
 
 [sub_resource type="Animation" id="Animation_qe5cv"]
 length = 0.001
@@ -83,13 +89,15 @@ theme_override_icons/unchecked = ExtResource("2_3qeyo")
 theme_override_icons/radio_checked = ExtResource("1_5u8vp")
 theme_override_icons/radio_unchecked = ExtResource("2_3qeyo")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/HBoxContainer"]
+[node name="RichTextLabel" type="LineEdit" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/normal_font = ExtResource("1_3qeyo")
-theme_override_font_sizes/normal_font_size = 52
-text = "This is were the text will go"
-vertical_alignment = 1
+theme_override_fonts/font = ExtResource("1_3qeyo")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mpid7")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_nrbgo")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yx810")
+placeholder_text = "This is were the text will go"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
