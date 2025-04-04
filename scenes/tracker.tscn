@@ -1,13 +1,13 @@
 [gd_scene load_steps=17 format=3 uid="uid://clpd4aclajqmd"]
 
-[ext_resource type="Script" uid="uid://bfysu58gl7fy2" path="res://scripts/tracker.gd" id="1_2oy2a"]
+[ext_resource type="Script" uid="uid://cbv3p47bngfgp" path="res://scripts/tracker.gd" id="1_2oy2a"]
 [ext_resource type="FontFile" uid="uid://q0n4smkjtegn" path="res://assets/fonts/Coolvetica Rg.otf" id="1_bfym8"]
-[ext_resource type="Texture2D" uid="uid://c6l034rb2hklb" path="res://assets/tracker/arrow-left.svg" id="1_ocy8l"]
-[ext_resource type="Texture2D" uid="uid://dd0lmhan56a3b" path="res://assets/home_bg.png" id="2_2o4v1"]
-[ext_resource type="Shader" uid="uid://dpf35ae6e6l4a" path="res://shaders/bg.gdshader" id="2_rep8v"]
-[ext_resource type="Texture2D" uid="uid://d0iu4ydwukadr" path="res://assets/tracker/dots-three-vertical-bold.svg" id="3_dcoxp"]
-[ext_resource type="Texture2D" uid="uid://cmrjk4lchpxbm" path="res://assets/tracker/plus.svg" id="5_2oy2a"]
-[ext_resource type="Texture2D" uid="uid://cgpip054k873x" path="res://assets/tracker/floppy-disk.svg" id="8_rep8v"]
+[ext_resource type="Texture2D" uid="uid://b7kvraox1a72a" path="res://assets/tracker/arrow-left.svg" id="1_ocy8l"]
+[ext_resource type="Texture2D" uid="uid://ciumnb85v66mc" path="res://assets/home_bg.png" id="2_2o4v1"]
+[ext_resource type="Shader" uid="uid://4uk3iwjpoolw" path="res://shaders/bg.gdshader" id="2_rep8v"]
+[ext_resource type="Texture2D" uid="uid://ribmmpthspxj" path="res://assets/tracker/dots-three-vertical-bold.svg" id="3_dcoxp"]
+[ext_resource type="Texture2D" uid="uid://col7mg5ly0af8" path="res://assets/tracker/plus.svg" id="5_2oy2a"]
+[ext_resource type="Texture2D" uid="uid://cmrpuerhp2qpo" path="res://assets/tracker/floppy-disk.svg" id="8_rep8v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i26kx"]
 shader = ExtResource("2_rep8v")
