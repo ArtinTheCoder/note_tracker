@@ -1,4 +1,4 @@
-**Note Tracker** is a simple note- taking application built with **Godot Engine**. Organize your thoughs, tasks and reminders in a clean and efficient way.  
+**Note Tracker** is a simple note taking application built with **Godot Engine**. Organize your thoughs, tasks and reminders in a clean and efficient way.  
 
 > I made this because Moto Note (the preinstalled note-taking app on Motorola) is awful and never saves the tasks properly.
 
