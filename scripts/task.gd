@@ -7,11 +7,22 @@ extends Control
 signal task_edited
 signal task_completed(task)
 
+var timer : Timer
+var printed_once : bool = false
+
 func _ready() -> void:
 	task_line_edit.text_submitted.connect(task_edited.emit)
 	task_line_edit.focus_exited.connect(task_edited.emit)
 	completed_checkbox.toggled.connect(_on_check_box_toggled)
 	animation_player.play("Spawn")
+
+	timer = Timer.new()
+	timer.wait_time = 0.5
+	timer.one_shot = true
+	add_child(timer)
+
+	# Connect timer signal
+	timer.timeout.connect(_on_timer_timeout)
 
 func _on_check_box_toggled(_pressed: bool) -> void:
 	task_completed.emit(self)
@@ -26,3 +37,16 @@ func get_task_data() -> Dictionary:
 func set_task_data(data: Dictionary) -> void:
 	task_line_edit.text = data.get("text", "")
 	completed_checkbox.set_pressed_no_signal(data.get("checkbox_ticked", false))
+
+func _on_panel_container_button_down() -> void:
+	printed_once = false
+	timer.start()
+	
+func _on_panel_container_button_up() -> void:
+	timer.stop()
+	printed_once = true
+		
+func _on_timer_timeout():
+	if not printed_once:
+		print("TIMER FINISHED")
+		printed_once = true
