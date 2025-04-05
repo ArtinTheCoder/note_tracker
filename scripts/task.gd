@@ -44,9 +44,16 @@ func _on_panel_container_button_down() -> void:
 	
 func _on_panel_container_button_up() -> void:
 	timer.stop()
-	printed_once = true
-		
+	if printed_once:
+		animation_player.play_backwards("delete_stayed")
+	
 func _on_timer_timeout():
 	if not printed_once:
 		print("TIMER FINISHED")
 		printed_once = true
+	
+	animation_player.play("delete")
+	await animation_player.animation_finished
+	
+func _on_delete_button_pressed() -> void:
+	print("delete")
