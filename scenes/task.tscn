@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://isickk7036q"]
+[gd_scene load_steps=20 format=3 uid="uid://isickk7036q"]
 
 [ext_resource type="FontFile" uid="uid://q0n4smkjtegn" path="res://assets/fonts/Coolvetica Rg.otf" id="1_3qeyo"]
 [ext_resource type="Texture2D" uid="uid://cl16bdi12xjkc" path="res://assets/check-square.svg" id="1_5u8vp"]
@@ -30,18 +30,9 @@ corner_radius_bottom_left = 64
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yx810"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrbgo"]
-bg_color = Color(0.199772, 0.216941, 0.212647, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpid7"]
+bg_color = Color(0.997367, 0.289067, 0.250573, 1)
 corner_radius_top_left = 64
-corner_radius_top_right = 64
-corner_radius_bottom_right = 64
-corner_radius_bottom_left = 64
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yx810"]
-bg_color = Color(0.176471, 0.192157, 0.188235, 1)
-corner_radius_top_left = 64
-corner_radius_top_right = 64
-corner_radius_bottom_right = 64
 corner_radius_bottom_left = 64
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxhym"]
@@ -247,8 +238,8 @@ placeholder_text = "This is were the text will go"
 [node name="DeleteButton" type="Button" parent="."]
 offset_bottom = 245.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lxhym")
-theme_override_styles/hover = SubResource("StyleBoxFlat_nrbgo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yx810")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mpid7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lxhym")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lxhym")
 
 [node name="CenterContainer" type="CenterContainer" parent="DeleteButton"]

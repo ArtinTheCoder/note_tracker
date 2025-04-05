@@ -3,9 +3,11 @@ extends Control
 @export var task_line_edit: LineEdit
 @export var completed_checkbox: CheckBox
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var delete_button: Button = $DeleteButton
 
 signal task_edited
 signal task_completed(task)
+signal task_deleted(task)
 
 var timer : Timer
 var printed_once : bool = false
@@ -14,6 +16,7 @@ func _ready() -> void:
 	task_line_edit.text_submitted.connect(task_edited.emit)
 	task_line_edit.focus_exited.connect(task_edited.emit)
 	completed_checkbox.toggled.connect(_on_check_box_toggled)
+	delete_button.pressed.connect(_on_deleted_button_pressed)
 	animation_player.play("Spawn")
 
 	timer = Timer.new()
@@ -55,5 +58,5 @@ func _on_timer_timeout():
 	animation_player.play("delete")
 	await animation_player.animation_finished
 	
-func _on_delete_button_pressed() -> void:
-	print("delete")
+func _on_deleted_button_pressed() -> void:
+	task_deleted.emit(self)
