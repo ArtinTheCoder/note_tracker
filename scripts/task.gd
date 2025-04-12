@@ -42,6 +42,7 @@ func set_task_data(data: Dictionary) -> void:
 	completed_checkbox.set_pressed_no_signal(data.get("checkbox_ticked", false))
 
 func _on_panel_container_button_down() -> void:
+	delete_button.hide()
 	printed_once = false
 	timer.start()
 	
@@ -49,12 +50,15 @@ func _on_panel_container_button_up() -> void:
 	timer.stop()
 	if printed_once:
 		animation_player.play_backwards("delete_stayed")
-	
+		await animation_player.animation_finished
+		delete_button.hide()
+		
 func _on_timer_timeout():
 	if not printed_once:
 		print("TIMER FINISHED")
 		printed_once = true
 	
+	delete_button.show()
 	animation_player.play("delete")
 	await animation_player.animation_finished
 	

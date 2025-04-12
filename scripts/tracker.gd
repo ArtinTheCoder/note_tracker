@@ -2,8 +2,8 @@ extends Control
 
 var task_scene = preload("res://scenes/task.tscn")
 
-@onready var active_tasks_container = $ScrollContainer/VBoxContainer/Tasks/VBoxContainer
-@onready var finished_tasks_container = $ScrollContainer/VBoxContainer/FinishedTasks/VBoxContainer
+@onready var active_tasks_container = $Tasks/VBoxContainer
+@onready var finished_tasks_container = $FinishedTasks/VBoxContainer
 @onready var agenda_title: LineEdit = $Title/TitleText
 
 const SAVE_PATH = "user://tasks.json"
@@ -54,7 +54,7 @@ func save_tasks():
 	# Create a data structure that includes both tasks and the title
 	var save_data = {
 		"agenda_title": agenda_title.text,  # Save the title text
-		"tasks": []  # Array to hold task data
+		"tasks": [], # Array to hold task data
 	}
 	
 	# Collect all tasks as before

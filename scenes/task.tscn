@@ -236,6 +236,8 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_yx810")
 placeholder_text = "This is were the text will go"
 
 [node name="DeleteButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
 offset_bottom = 245.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lxhym")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mpid7")
