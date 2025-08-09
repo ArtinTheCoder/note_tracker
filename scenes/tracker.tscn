@@ -1,12 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://clpd4aclajqmd"]
+[gd_scene load_steps=14 format=3 uid="uid://clpd4aclajqmd"]
 
-[ext_resource type="Script" uid="uid://cbv3p47bngfgp" path="res://scripts/tracker.gd" id="1_2oy2a"]
+[ext_resource type="Script" path="res://scripts/tracker.gd" id="1_2oy2a"]
 [ext_resource type="FontFile" uid="uid://q0n4smkjtegn" path="res://assets/fonts/Coolvetica Rg.otf" id="1_bfym8"]
-[ext_resource type="Texture2D" uid="uid://b7kvraox1a72a" path="res://assets/tracker/arrow-left.svg" id="1_ocy8l"]
-[ext_resource type="Texture2D" uid="uid://ciumnb85v66mc" path="res://assets/home_bg.png" id="2_2o4v1"]
-[ext_resource type="Shader" uid="uid://4uk3iwjpoolw" path="res://shaders/bg.gdshader" id="2_rep8v"]
-[ext_resource type="Texture2D" uid="uid://ribmmpthspxj" path="res://assets/tracker/dots-three-vertical-bold.svg" id="3_dcoxp"]
-[ext_resource type="Texture2D" uid="uid://col7mg5ly0af8" path="res://assets/tracker/plus.svg" id="5_2oy2a"]
+[ext_resource type="Texture2D" uid="uid://3ifiv02skdch" path="res://assets/tracker/arrow-left.svg" id="1_ocy8l"]
+[ext_resource type="Texture2D" uid="uid://copn78udyw8dl" path="res://assets/home_bg.png" id="2_2o4v1"]
+[ext_resource type="Shader" path="res://shaders/bg.gdshader" id="2_rep8v"]
+[ext_resource type="Texture2D" uid="uid://gdd0xp8yyutk" path="res://assets/tracker/dots-three-vertical-bold.svg" id="3_dcoxp"]
+[ext_resource type="Texture2D" uid="uid://botqd7v430qv0" path="res://assets/tracker/plus.svg" id="5_2oy2a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i26kx"]
 shader = ExtResource("2_rep8v")
@@ -14,16 +14,14 @@ shader_parameter/size = 15.0
 shader_parameter/speed = 0.15
 shader_parameter/direction_x = 1.0
 shader_parameter/direction_y = 1.0
-shader_parameter/movement_texture = ExtResource("2_2o4v1")
 shader_parameter/opacity = 0.4
 shader_parameter/is_paused = false
+shader_parameter/movement_texture = ExtResource("2_2o4v1")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2oy2a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k524b"]
 content_margin_top = 30.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2o4v1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rep8v"]
 
@@ -109,7 +107,6 @@ offset_left = 80.0
 offset_top = 210.0
 offset_right = 1000.0
 offset_bottom = 1510.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_2o4v1")
 horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Tasks"]
@@ -130,7 +127,6 @@ theme_override_colors/default_color = Color(0, 0.870588, 0.756863, 1)
 theme_override_fonts/normal_font = ExtResource("1_bfym8")
 theme_override_font_sizes/normal_font_size = 64
 text = "Completed"
-vertical_alignment = 1
 
 [node name="FinishedTasks" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(0, 300)
