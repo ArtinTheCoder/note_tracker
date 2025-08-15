@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://cswgotn6jyar"]
 
 [ext_resource type="PackedScene" uid="uid://cck06yd7oq6v8" path="res://scenes/bg.tscn" id="1_2bxe5"]
-[ext_resource type="Script" path="res://scripts/transition.gd" id="1_fdjy4"]
-[ext_resource type="Texture2D" uid="uid://bow6qoqb277dq" path="res://assets/transition/logo.png" id="2_ee2du"]
-[ext_resource type="Texture2D" uid="uid://cah4pmwxdxc64" path="res://assets/transition/loading_icon.svg" id="3_5ajm6"]
-[ext_resource type="Script" path="res://scripts/circle.gd" id="4_3gxnu"]
+[ext_resource type="Script" uid="uid://dhif2x58axjqc" path="res://scripts/transition.gd" id="1_fdjy4"]
+[ext_resource type="Texture2D" uid="uid://i6tqs46hoeiy" path="res://assets/transition/logo.png" id="2_ee2du"]
+[ext_resource type="Texture2D" uid="uid://5iisc7gl4a02" path="res://assets/transition/loading_icon.svg" id="3_5ajm6"]
+[ext_resource type="Script" uid="uid://xlqmgxd8il4g" path="res://scripts/circle.gd" id="4_3gxnu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yp6he"]
 corner_radius_top_left = 128
@@ -93,8 +93,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c67d6"]
 _data = {
-"RESET": SubResource("Animation_jrwms"),
-"intro": SubResource("Animation_pl0l0")
+&"RESET": SubResource("Animation_jrwms"),
+&"intro": SubResource("Animation_pl0l0")
 }
 
 [node name="transition" type="Control"]
@@ -162,12 +162,11 @@ text = "V1.6"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_c67d6")
+&"": SubResource("AnimationLibrary_c67d6")
 }
 autoplay = "intro"
 
 [node name="Switch" type="Timer" parent="."]
-wait_time = 2.5
 autostart = true
 
 [connection signal="timeout" from="Switch" to="." method="_on_timer_timeout"]

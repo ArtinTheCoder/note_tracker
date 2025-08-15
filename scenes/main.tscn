@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://284foo4bmcsn"]
+[gd_scene load_steps=7 format=3 uid="uid://284foo4bmcsn"]
 
 [ext_resource type="PackedScene" uid="uid://cck06yd7oq6v8" path="res://scenes/bg.tscn" id="1_jae3k"]
-[ext_resource type="Texture2D" uid="uid://botqd7v430qv0" path="res://assets/tracker/plus.svg" id="2_rj06e"]
+[ext_resource type="Script" uid="uid://cfakpuyf2860d" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="Texture2D" uid="uid://col7mg5ly0af8" path="res://assets/tracker/plus.svg" id="2_rj06e"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5oaq"]
 
@@ -26,6 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sugp2")
 
 [node name="BG" parent="." instance=ExtResource("1_jae3k")]
 layout_mode = 1
@@ -47,3 +49,22 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_17seu")
 theme_override_styles/normal = SubResource("StyleBoxFlat_17seu")
 icon = ExtResource("2_rj06e")
 icon_alignment = 1
+
+[node name="TrackersScroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -486.0
+offset_top = -1101.0
+offset_right = 486.0
+offset_bottom = 935.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TrackersVBox" type="VBoxContainer" parent="TrackersScroll"]
+layout_mode = 2
+
+[connection signal="pressed" from="AddButtonCanvasLayer/AddTask" to="." method="_on_add_task_pressed"]

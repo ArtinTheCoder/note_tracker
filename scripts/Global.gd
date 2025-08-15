@@ -1,3 +1,5 @@
 extends Node
 
-var next_scene_path: String
+var next_scene_path
+
+var tracker_name
