@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://284foo4bmcsn"]
+
+[ext_resource type="PackedScene" uid="uid://cck06yd7oq6v8" path="res://scenes/bg.tscn" id="1_jae3k"]
+[ext_resource type="Texture2D" uid="uid://botqd7v430qv0" path="res://assets/tracker/plus.svg" id="2_rj06e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5oaq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17seu"]
+bg_color = Color(0, 0.313726, 0.270588, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7p6qq"]
+bg_color = Color(0, 0.407336, 0.353246, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" parent="." instance=ExtResource("1_jae3k")]
+layout_mode = 1
+
+[node name="AddButtonCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AddTask" type="Button" parent="AddButtonCanvasLayer"]
+modulate = Color(0, 0.996078, 0.866667, 1)
+offset_left = 882.0
+offset_top = 2216.0
+offset_right = 1030.0
+offset_bottom = 2353.0
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r5oaq")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_17seu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_17seu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7p6qq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_17seu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_17seu")
+icon = ExtResource("2_rj06e")
+icon_alignment = 1

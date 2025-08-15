@@ -1,22 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://clpd4aclajqmd"]
+[gd_scene load_steps=12 format=3 uid="uid://clpd4aclajqmd"]
 
 [ext_resource type="Script" path="res://scripts/tracker.gd" id="1_2oy2a"]
 [ext_resource type="FontFile" uid="uid://q0n4smkjtegn" path="res://assets/fonts/Coolvetica Rg.otf" id="1_bfym8"]
 [ext_resource type="Texture2D" uid="uid://3ifiv02skdch" path="res://assets/tracker/arrow-left.svg" id="1_ocy8l"]
-[ext_resource type="Texture2D" uid="uid://copn78udyw8dl" path="res://assets/home_bg.png" id="2_2o4v1"]
-[ext_resource type="Shader" path="res://shaders/bg.gdshader" id="2_rep8v"]
+[ext_resource type="PackedScene" uid="uid://cck06yd7oq6v8" path="res://scenes/bg.tscn" id="2_fpjmt"]
 [ext_resource type="Texture2D" uid="uid://gdd0xp8yyutk" path="res://assets/tracker/dots-three-vertical-bold.svg" id="3_dcoxp"]
 [ext_resource type="Texture2D" uid="uid://botqd7v430qv0" path="res://assets/tracker/plus.svg" id="5_2oy2a"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i26kx"]
-shader = ExtResource("2_rep8v")
-shader_parameter/size = 15.0
-shader_parameter/speed = 0.15
-shader_parameter/direction_x = 1.0
-shader_parameter/direction_y = 1.0
-shader_parameter/opacity = 0.4
-shader_parameter/is_paused = false
-shader_parameter/movement_texture = ExtResource("2_2o4v1")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2oy2a"]
 
@@ -48,25 +37,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2oy2a")
 
-[node name="BGStatic" type="ColorRect" parent="."]
+[node name="BG" parent="." instance=ExtResource("2_fpjmt")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.114897, 0.114897, 0.114897, 1)
-
-[node name="BGPattern" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_i26kx")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_2o4v1")
-stretch_mode = 1
 
 [node name="Title" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -162,4 +134,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2oy2a")
 icon = ExtResource("5_2oy2a")
 icon_alignment = 1
 
+[connection signal="pressed" from="Title/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="AddButtonCanvasLayer/AddTask" to="." method="_on_add_task_pressed"]

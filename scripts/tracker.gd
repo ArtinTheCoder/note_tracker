@@ -177,3 +177,7 @@ func on_save_button_pressed():
 func _on_add_task_pressed() -> void:
 	add_task()
 	save_tasks()
+
+func _on_back_pressed() -> void:
+	Global.next_scene_path = "res://scenes/main.tscn"
+	get_tree().change_scene_to_file("res://scenes/transition.tscn")
