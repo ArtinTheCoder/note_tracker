@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck8ghkr6tfq6i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e4io4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xysx5"]
+bg_color = Color(0.151276, 0.151276, 0.151276, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o20m7"]
+bg_color = Color(0.113725, 0.113725, 0.113725, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4io4"]
+bg_color = Color(0.113725, 0.113725, 0.113725, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="Agenda" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -366.0
+offset_top = -110.0
+offset_right = 366.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e4io4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xysx5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o20m7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_e4io4")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 66.0
+offset_right = 728.0
+offset_bottom = 154.0
+theme_override_font_sizes/font_size = 64
+text = "File Name"
+horizontal_alignment = 1

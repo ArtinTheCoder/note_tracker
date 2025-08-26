@@ -6,20 +6,28 @@ var task_scene = preload("res://scenes/task.tscn")
 @onready var agenda_title: LineEdit = $Title/TitleText
 
 # This will be set from outside before loading this scene
-var tracker_name: String = "default"
+var tracker_name: String =  Global.selected_tracker_json_file
 
 # Dynamic save path based on tracker name
 var SAVE_PATH: String:
 	get:
-		return "user://tasks_%s.json" % tracker_name
+		var name = tracker_name.strip_edges()         
+		if name == "":
+			name = "tasks_default"
+		# avoid double .json
+		if name.ends_with(".json"):
+			return "user://%s" % name
+		return "user://%s.json" % name
+
 
 # Spacer references
 var active_spacer: Control
 var finished_spacer: Control
 
 func _ready():
+	print(Global.selected_tracker_json_file)
 	# Set tracker name from Global if available
-	tracker_name = Global.tracker_name
+	tracker_name = Global.selected_tracker_json_file
 
 	# Setup auto-save timer
 	var save_timer = Timer.new()
@@ -159,3 +167,6 @@ func _on_add_task_pressed():
 func _on_back_pressed():
 	Global.next_scene_path = "res://scenes/main.tscn"
 	get_tree().change_scene_to_file("res://scenes/transition.tscn")
+
+func _on_title_text_text_changed(new_text: String) -> void:
+	save_tasks()

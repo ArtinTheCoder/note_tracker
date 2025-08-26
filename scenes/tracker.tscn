@@ -63,7 +63,7 @@ theme_override_fonts/font = ExtResource("1_bfym8")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2oy2a")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_k524b")
-placeholder_text = "Daily Agenda"
+text = "Daily Agenda"
 alignment = 1
 expand_to_text_length = true
 
@@ -135,4 +135,5 @@ icon = ExtResource("5_2oy2a")
 icon_alignment = 1
 
 [connection signal="pressed" from="Title/Back" to="." method="_on_back_pressed"]
+[connection signal="text_changed" from="Title/TitleText" to="." method="_on_title_text_text_changed"]
 [connection signal="pressed" from="AddButtonCanvasLayer/AddTask" to="." method="_on_add_task_pressed"]
