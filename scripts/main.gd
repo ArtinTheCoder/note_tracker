@@ -51,14 +51,31 @@ func connect_tracker_signal():
 	for tracker in trackers_vbox.get_children():
 		for child in tracker.get_children():
 			if child is Button:
-				child.pressed.connect(change_scene_to_tracker.bind(child.get_parent().get_instance_id()))
-		
+#				Panel Container Button
+				if child.get_child(0) is Label:
+					child.pressed.connect(change_scene_to_tracker.bind(child.get_parent().get_instance_id()))
+#				Delete Button
+				else:
+					child.pressed.connect(delete.bind(child.get_parent().get_instance_id()))
+
 func change_scene_to_tracker(id):
 	for tracker in trackers_vbox.get_children():
 		if tracker.get_instance_id() == id:
-			Global.selected_tracker_json_file = json_files[tracker.get_index()]
-			Global.next_scene_path = "res://scenes/tracker.tscn"
-			get_tree().change_scene_to_file("res://scenes/transition.tscn")
+			if tracker.button_disabled == false:
+				Global.selected_tracker_json_file = json_files[tracker.get_index()]
+				Global.next_scene_path = "res://scenes/tracker.tscn"
+				get_tree().change_scene_to_file("res://scenes/transition.tscn")
+
+func delete(id):
+	var dir = DirAccess.open("user://")
+	for tracker in trackers_vbox.get_children():
+		if tracker.get_instance_id() == id:
+			var error = dir.remove(str(json_files[tracker.get_index()]))
+			if error == OK:
+				tracker.queue_free()
+				
+			else:
+				print(error)
 			
 func _on_add_task_pressed() -> void:
 	var tracker_name_scene = load("res://scenes/tracker_name.tscn")

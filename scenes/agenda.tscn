@@ -1,4 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck8ghkr6tfq6i"]
+[gd_scene load_steps=15 format=3 uid="uid://ck8ghkr6tfq6i"]
+
+[ext_resource type="Script" uid="uid://cqf8uos6fs88v" path="res://scenes/agenda.gd" id="1_o20m7"]
+[ext_resource type="Texture2D" uid="uid://v2uqpo4sd623" path="res://assets/tasks/trash.svg" id="1_xysx5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e4io4"]
 
@@ -8,10 +11,10 @@ border_width_left = 8
 border_width_top = 8
 border_width_right = 8
 border_width_bottom = 8
-corner_radius_top_left = 24
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-corner_radius_bottom_left = 24
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o20m7"]
 bg_color = Color(0.113725, 0.113725, 0.113725, 1)
@@ -19,10 +22,10 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-corner_radius_top_left = 24
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-corner_radius_bottom_left = 24
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4io4"]
 bg_color = Color(0.113725, 0.113725, 0.113725, 1)
@@ -30,10 +33,165 @@ border_width_left = 8
 border_width_top = 8
 border_width_right = 8
 border_width_bottom = 8
-corner_radius_top_left = 24
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-corner_radius_bottom_left = 24
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o20m7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2225"]
+bg_color = Color(0.997367, 0.289067, 0.250573, 1)
+corner_radius_top_left = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tuxwn"]
+bg_color = Color(0.996078, 0.168627, 0.160784, 1)
+corner_radius_top_left = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="Animation" id="Animation_qe5cv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeleteButton:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 245)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DeleteButton/CenterContainer/TextureRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DeleteButton/CenterContainer/TextureRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_mpid7"]
+resource_name = "Kill"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_q2rnq"]
+resource_name = "delete"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeleteButton:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 245), Vector2(250, 245)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeleteButton/CenterContainer/TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nrbgo"]
+resource_name = "delete_stayed"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeleteButton:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 245), Vector2(250, 245)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeleteButton/CenterContainer/TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DeleteButton/CenterContainer/TextureRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nrbgo"]
+_data = {
+&"RESET": SubResource("Animation_qe5cv"),
+&"Spawn": SubResource("Animation_mpid7"),
+&"delete": SubResource("Animation_q2rnq"),
+&"delete_stayed": SubResource("Animation_nrbgo")
+}
 
 [node name="Agenda" type="Control"]
 layout_mode = 3
@@ -42,20 +200,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_o20m7")
 
 [node name="PanelContainer" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -366.0
-offset_top = -110.0
-offset_right = 366.0
-offset_bottom = 110.0
+offset_left = -432.0
+offset_right = 432.0
+offset_bottom = 245.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_e4io4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xysx5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_o20m7")
@@ -64,9 +219,41 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_e4io4")
 [node name="Label" type="Label" parent="PanelContainer"]
 layout_mode = 2
 offset_left = 4.0
-offset_top = 66.0
-offset_right = 728.0
-offset_bottom = 154.0
+offset_top = 3.0
+offset_right = 857.0
+offset_bottom = 237.0
 theme_override_font_sizes/font_size = 64
 text = "File Name"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeleteButton" type="Button" parent="."]
+layout_mode = 1
+offset_bottom = 245.0
+mouse_force_pass_scroll_events = false
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o20m7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t2225")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tuxwn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tuxwn")
+
+[node name="CenterContainer" type="CenterContainer" parent="DeleteButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="DeleteButton/CenterContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+texture = ExtResource("1_xysx5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nrbgo")
+}
+autoplay = "Spawn"
+
+[connection signal="button_down" from="PanelContainer" to="." method="_on_panel_container_button_down"]
+[connection signal="button_up" from="PanelContainer" to="." method="_on_panel_container_button_up"]
